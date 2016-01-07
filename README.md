@@ -4,7 +4,7 @@ A tutum application (stackfile) that includes and uses two custom (but simple) p
 This was project was heavily influenced by [Tutum's python-quickstart](https://github.com/tutumcloud/quickstart-python) project and from reading Tutum's docs on [Load balancing a Web Service](https://support.tutum.co/support/solutions/articles/5000050235-load-balancing-a-web-service)
 
 ## How You Can Use It
-You can use [my stackfile](blob/master/tutum.yml) by [viewing it on stackfiles.io](https://stackfiles.io/registry/568ed2e5a23daa0100bcd373) and clicking "Deploy to Tutum"
+You can use [my stackfile](tutum.yml) by [viewing it on stackfiles.io](https://stackfiles.io/registry/568ed2e5a23daa0100bcd373) and clicking "Deploy to Tutum"
 
 ## How I Built It
 I built the Docker image locally, and then tagged/pushed to my private repository hosted on tutum.co.
