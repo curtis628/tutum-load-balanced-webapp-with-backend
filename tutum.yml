@@ -1,0 +1,42 @@
+redis:
+  image: 'redis:latest'
+  tags:
+    - backend
+greeting-rest:
+  image: 'tutum.co/curtis628/repo:greeting-rest-1.0'
+  expose:
+    - '80'
+  links:
+    - redis
+  tags:
+    - backend
+  target_num_containers: 2
+greeting-rest-haproxy:
+  image: 'tutum/haproxy:latest'
+  expose:
+    - '80'
+  links:
+    - greeting-rest
+  roles:
+    - global
+  tags:
+    - backend
+greeting-web:
+  image: 'tutum.co/curtis628/repo:greeting-web-1.0'
+  expose:
+    - '80'
+  links:
+    - greeting-rest-haproxy
+  tags:
+    - frontend
+  target_num_containers: 2
+greeting-web-haproxy:
+  image: 'tutum/haproxy:latest'
+  links:
+    - greeting-web
+  ports:
+    - '80:80'
+  roles:
+    - global
+  tags:
+    - frontend
